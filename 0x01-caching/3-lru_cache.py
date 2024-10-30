@@ -29,6 +29,6 @@ class LRUCache(BaseCaching):
     def get(self, key):
         """ get data from the cache """
         if key is None or key not in self.cache_data:
-            return None
-        else:
-            return self.cache_data[key]
+            self.cache_data.move_to_end(key, last=False)
+        return self.cache_data.get(key, None)
+    
