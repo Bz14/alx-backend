@@ -15,7 +15,6 @@ class LRUCache(BaseCaching):
 
     def put(self, key, item):
         """ put an item to the cache """
-
         if key is not None and item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 val = self.keys.pop(0)
